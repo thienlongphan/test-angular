@@ -1,0 +1,37 @@
+<div class="mb-3">
+  <label for="autocompleteInput" class="form-label">Select User</label>
+  <input
+    type="text"
+    class="form-control"
+    id="autocompleteInput"
+    [formControl]="myControl"
+    placeholder="Type to search..."
+    [matAutocomplete]="auto"
+    (keyup.enter)="onSearch()"
+  />
+  <mat-autocomplete
+    #auto="matAutocomplete"
+    (opened)="open()"
+    (optionSelected)="select($event)"
+  >
+    <ng-container *ngIf="enableScrollLoading">
+      <mat-option *ngFor="let option of options" [value]="option">
+        {{ option }}
+      </mat-option>
+    </ng-container>
+
+    <ng-container *ngIf="!enableScrollLoading">
+      <mat-option *ngFor="let option of filterOption" [value]="option">
+        {{ option }}
+      </mat-option>
+    </ng-container>
+
+    <mat-option *ngIf="options.length === 0 && !isLoading">No data</mat-option>
+    <mat-option *ngIf="isLoading">
+      <mat-progress-spinner
+        diameter="20"
+        mode="indeterminate"
+      ></mat-progress-spinner>
+    </mat-option>
+  </mat-autocomplete>
+</div>

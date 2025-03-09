@@ -1,0 +1,14 @@
+<div ngbDropdown class="d-inline-block">
+  <button
+    type="button"
+    class="btn btn-outline-primary"
+    id="dropdownBasic1"
+    ngbDropdownToggle
+  >
+    <ng-content select="[dropdown-label]"></ng-content>
+  </button>
+  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+    <!-- <button ngbDropdownItem>Action - 1</button> -->
+    <ng-content select="custom-dropdown-option"></ng-content>
+  </div>
+</div>

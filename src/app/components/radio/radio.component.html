@@ -1,0 +1,13 @@
+<div class="custom-radio">
+  <input
+    #radioInput
+    type="radio"
+    [id]="id"
+    [name]="name"
+    [value]="value"
+    [(ngModel)]="internalValue"
+    (ngModelChange)="getChange($event)"
+  />
+  <label [for]="id"><ng-content></ng-content></label>
+  <p>Selected {{ radioInput.checked }}</p>
+</div>

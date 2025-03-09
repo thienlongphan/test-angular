@@ -1,0 +1,13 @@
+<div class="my-checkbox">
+  <input
+    type="checkbox"
+    id="my-checkbox"
+    class="my-checkbox__input"
+    value="Some Value"
+    [(ngModel)]="checked"
+    (ngModelChange)="getChange($event)"
+  />
+  <label for="my-checkbox" class="my-checkbox__label"
+    ><ng-content></ng-content
+  ></label>
+</div>
