@@ -12,6 +12,8 @@ import { MatTableModule } from '@angular/material/table';
 import { AutocompleteComponent } from './components/autocomplete/autocomplete.component';
 import { AutocompleteService } from './components/autocomplete/autocomplete.service';
 import { map } from 'rxjs';
+import { CustomEventDirective } from './directives/custom-event.directive';
+import { CustomInputComponent } from './components/custom-input/custom-input.component';
 
 export interface PeriodicElement {
   name: string;
@@ -179,7 +181,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
     ReactiveFormsModule,
     CommonModule,
     MatTableModule,
-    AutocompleteComponent,
+    CustomEventDirective,
+    CustomInputComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
@@ -209,57 +212,36 @@ export class AppComponent {
   pageSize = 20;
   isLoading = false;
   lastQuery = '';
+  enterPressed = true;
+  testInput = '';
 
   constructor(private service: AutocompleteService, private fb: FormBuilder) {}
 
   ngOnInit() {
     this.testForm = this.fb.group({
-      user: '',
-      testSelect: '',
+      testInput: '',
     });
-    this.testForm.valueChanges.subscribe((value) => console.log(value));
   }
 
-  onSearch(query: string) {
-    // this.page = 1; // Reset pagination on new query
-    // this.options = [];
-    // this.lastQuery = query;
-    // this.fetchResults(query);
+  onEnter() {
+    console.log('enter');
   }
 
-  fetchResults(query: string) {
-    this.isLoading = true;
-    this.service
-      .getResults(query, this.page, this.pageSize)
-      .pipe(
-        map((response) => response.users.map((item: any) => item.firstName))
-      )
-      .subscribe((data) => {
-        this.isLoading = false;
-        this.options = data;
-      });
+  onChange(e: any) {
+    console.log('change', e);
   }
 
-  loadMoreResults() {
-    console.log('loadmore');
-    if (!this.lastQuery || this.isLoading) return;
-    this.page++;
-    this.isLoading = true;
-    this.service
-      .getResults(this.lastQuery, this.page, this.pageSize)
-      .pipe(
-        map((response) => response.users.map((item: any) => item.firstName))
-      )
-      .subscribe((data) => {
-        this.isLoading = false;
-        this.options = [...this.options, ...data];
-      });
+  value: string = ''; // The current value of the input
+  private oldValue: string = ''; // Stores the previous value
+
+  storeOldValue() {
+    console.log('focus');
+    this.oldValue = this.testForm.get('testInput')?.value; // Store the initial value when focused
   }
 
-  onInputChange(query: string) {
-    this.page = 1; // Reset pagination on new query
-    this.options = [];
-    this.lastQuery = query;
-    if (query) this.fetchResults(query);
+  onBlurChange() {
+    if (this.testForm.get('testInput')?.value !== this.oldValue) {
+      // Perform any action like emitting an event or updating state
+    }
   }
 }

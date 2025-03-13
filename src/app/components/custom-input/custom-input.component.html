@@ -1,0 +1,11 @@
+<label for="exampleDataList" class="form-label">Datalist example</label>
+<input
+  class="form-control"
+  list="datalistOptions"
+  id="exampleDataList"
+  placeholder="Type to search..."
+  [(ngModel)]="value"
+  (input)="onInput()"
+  (blur)="onBlur()"
+  (focus)="onFocus()"
+/>

@@ -1,20 +1,8 @@
 <div class="container">
   <h1>Testing angular</h1>
-  <form [formGroup]="testForm">
-    <app-autocomplete
-      formControlName="user"
-      [options]="options"
-      [enableScrollLoading]="true"
-      [isLoading]="isLoading"
-      (search)="onSearch($event)"
-      (inputChange)="onInputChange($event)"
-      (loadMore)="loadMoreResults()"
-    ></app-autocomplete>
-    <app-autocomplete
-      formControlName="testSelect"
-      [options]="optionsTwo"
-    ></app-autocomplete>
-  </form>
+  <div class="mb-3">
+    <input type="text" appCustomEvent (valueChanged)="onChange($event)" />
+  </div>
 </div>
 
 <!-- <ng-template #noData>
