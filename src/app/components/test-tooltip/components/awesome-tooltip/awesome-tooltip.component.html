@@ -1,0 +1,9 @@
+<p @fadeSlide class="tooltip-container">
+  <ng-container *ngIf="template; else templateElse">
+    <ng-container *ngTemplateOutlet="template"></ng-container>
+  </ng-container>
+</p>
+
+<ng-template #templateElse>
+  <span>{{ text }}</span>
+</ng-template>

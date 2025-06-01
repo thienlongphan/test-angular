@@ -1,4 +1,10 @@
-import { Component, forwardRef, Input } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  forwardRef,
+  Input,
+  Output,
+} from '@angular/core';
 import {
   ControlValueAccessor,
   FormsModule,
@@ -21,8 +27,9 @@ import {
 })
 export class RadioComponent implements ControlValueAccessor {
   @Input() name = '';
-  @Input() value = '';
+  @Input() value = false;
   @Input() id = '';
+  @Output() radioClick = new EventEmitter();
   internalValue = '';
 
   onChange: (value: any) => void;
@@ -48,5 +55,9 @@ export class RadioComponent implements ControlValueAccessor {
 
   getChange(e: any) {
     this.onChange(e);
+  }
+
+  onClick(e: Event) {
+    this.radioClick.emit(e);
   }
 }

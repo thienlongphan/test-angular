@@ -1,0 +1,195 @@
+<div class="row">
+  <div class="col-4">
+    <div id="list-example" class="list-group custom-list">
+      <a
+        [class]="
+          isItemOne
+            ? 'list-group-item list-group-item-action active'
+            : 'list-group-item list-group-item-action'
+        "
+        href="#list-item-1"
+        >Item 1</a
+      >
+      <a
+        [class]="
+          isItemTwo
+            ? 'list-group-item list-group-item-action active'
+            : 'list-group-item list-group-item-action'
+        "
+        href="#list-item-2"
+        >Item 2</a
+      >
+      <a
+        [class]="
+          isItemThree
+            ? 'list-group-item list-group-item-action active'
+            : 'list-group-item list-group-item-action'
+        "
+        href="#list-item-3"
+        >Item 3</a
+      >
+      <a
+        [class]="
+          isItemFour
+            ? 'list-group-item list-group-item-action active'
+            : 'list-group-item list-group-item-action'
+        "
+        href="#list-item-4"
+        >Item 4</a
+      >
+    </div>
+  </div>
+  <div class="col-8">
+    <div
+      data-bs-spy="scroll"
+      data-bs-target="#list-example"
+      data-bs-smooth-scroll="true"
+      class="scrollspy-example"
+      tabindex="0"
+    >
+      <app-scroll-py (inView)="getActive($event, 'item1')">
+        <h4 id="list-item-1">Item 1</h4>
+      </app-scroll-py>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+        placeat veritatis minus molestias, quisquam animi possimus iste
+        blanditiis quaerat delectus maxime et voluptas. At consequatur sint
+        tempora unde aliquam a numquam optio. Nihil est eaque, veniam quidem at,
+        modi eum ad quis amet nesciunt non voluptates error deserunt
+        consequuntur alias libero animi expedita deleniti repudiandae velit
+        eligendi similique? Itaque sit voluptates error voluptatem obcaecati
+        explicabo totam alias quo ex voluptatum. Enim, molestiae minima
+        obcaecati ut natus ab aspernatur asperiores tempora officiis? Dicta
+        deleniti modi nobis ducimus nulla explicabo placeat, pariatur corporis
+        necessitatibus, eveniet quas aut iure. Blanditiis, aliquid. Accusantium,
+        blanditiis incidunt? Officia animi neque, facilis sed eius nisi rem
+        temporibus cupiditate, doloremque incidunt quos tempora nulla dicta!
+        Est, praesentium. Animi debitis, mollitia recusandae itaque labore
+        doloribus est corporis quia exercitationem, vero totam earum hic ipsa,
+        nostrum numquam aliquam ex! Ipsa iusto laboriosam assumenda? Optio
+        soluta modi voluptate vitae mollitia ratione impedit repellat itaque
+        quas assumenda provident deleniti, ipsa enim. Ipsa dolores iusto cum
+        recusandae tempora quo eos minima? Assumenda cum aliquid consequuntur
+        modi eos non consectetur eligendi unde laboriosam omnis libero
+        perferendis ipsa veritatis, dicta explicabo sapiente laborum voluptate,
+        saepe earum quam odit expedita dolore vel? Consectetur tempora ratione
+        quae.
+      </p>
+      <app-scroll-py (inView)="getActive($event, 'item2')">
+        <h4 id="list-item-2">Item 2</h4>
+      </app-scroll-py>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+        perspiciatis delectus optio nemo tenetur vel veritatis ab nihil quaerat
+        iste deserunt, atque recusandae deleniti iusto quis iure repellat,
+        doloremque quidem possimus minus earum dolorum dolore voluptatum minima?
+        Sint accusantium fugiat debitis quis eos numquam necessitatibus adipisci
+        porro, nihil officia ad illo laborum consectetur? Recusandae eos placeat
+        neque accusantium, et architecto harum delectus modi nisi quidem
+        voluptate voluptatem eligendi aperiam numquam distinctio sunt incidunt
+        ad maiores quis deserunt velit. Eligendi, odit! Ipsum expedita
+        repudiandae eligendi consequatur impedit. Sequi id, autem eius quas
+        accusamus accusantium ea aliquid cumque laboriosam voluptates delectus
+        odio consectetur quod, error debitis rem deserunt perspiciatis!
+        Obcaecati tempore commodi repellat aspernatur minus temporibus, fugit
+        libero labore atque exercitationem esse? Explicabo fugit excepturi
+        libero iste doloremque iure asperiores quo quam reprehenderit, omnis
+        obcaecati non rerum in. Cum expedita, unde optio sint eos, obcaecati
+        quas praesentium velit dignissimos omnis est inventore odit reiciendis
+        quos eum in itaque quis, corporis fugit maiores incidunt sunt quibusdam
+        possimus dicta! Officiis, ab inventore aliquid nesciunt nulla cum
+        tempora aut enim, quod repellendus autem cupiditate. Provident ullam a
+        non nulla? A cupiditate quo exercitationem mollitia aut repellendus,
+        labore non consequatur placeat, natus, hic molestias veniam! Nesciunt
+        sapiente ullam quis. Eum, reprehenderit. Repellendus itaque libero quo
+        magni, unde minus esse cupiditate omnis? Porro mollitia enim nostrum
+        incidunt neque? Ipsum, esse aliquam deserunt quis dolorum, maiores magni
+        magnam necessitatibus porro nisi dolore commodi beatae. Saepe commodi
+        ipsam tenetur temporibus cumque ullam deserunt nostrum voluptatem
+        voluptates quidem suscipit autem soluta, laudantium ut iusto fugit eius
+        vitae? Quo, vero eum! Veniam vitae laudantium aperiam reprehenderit
+        maiores maxime quaerat fuga eos, a, eum ipsa. Accusamus, quibusdam eum
+        rem dolores sunt, asperiores, reiciendis necessitatibus delectus
+        incidunt labore ex itaque! Distinctio repellat quis optio labore dolorem
+        perferendis, a, quibusdam illum sit tempore ab.
+      </p>
+      <app-scroll-py (inView)="getActive($event, 'item3')">
+        <h4 id="list-item-3">Item 3</h4>
+      </app-scroll-py>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. A, tempora
+        iste. Omnis maiores, cupiditate pariatur alias impedit labore sequi
+        reiciendis perspiciatis voluptatibus numquam. Molestiae in blanditiis
+        natus eveniet asperiores earum odio quaerat expedita. Deserunt provident
+        voluptatem ratione explicabo velit architecto dolor. Debitis rem aliquam
+        aperiam voluptatem accusamus eaque assumenda, ratione nam commodi ullam
+        quia quam numquam eveniet modi nostrum, quod perferendis similique at
+        provident ipsa magni laboriosam. Impedit expedita esse quaerat omnis
+        assumenda libero error debitis tenetur, nobis mollitia quos facere rerum
+        illum odio explicabo in magnam deserunt. Quibusdam alias sed temporibus
+        autem aperiam atque natus necessitatibus, libero voluptatibus iste
+        delectus et dolorem omnis velit eaque? Assumenda necessitatibus aliquid
+        fuga commodi alias consectetur explicabo mollitia natus ducimus vitae
+        animi corporis magni aspernatur adipisci, accusantium nisi consequatur
+        harum ab hic error quis fugiat! Voluptatum officia corporis amet
+        excepturi culpa. Odio reprehenderit quod laboriosam sed nisi provident
+        totam nulla recusandae minima quaerat ad saepe perspiciatis fugiat, aut
+        vel asperiores autem blanditiis quae exercitationem, perferendis porro!
+        Animi nam optio, laborum magni sunt mollitia praesentium exercitationem
+        impedit rerum deserunt odit eum in adipisci perspiciatis dolorum
+        molestias! Nobis dolorum autem perferendis dolore. Corporis laborum
+        dolor repudiandae molestiae. Provident, harum! Repellat quis aliquid
+        adipisci iure ullam cumque veritatis perferendis praesentium, porro
+        expedita! Omnis, ipsa facere blanditiis reiciendis assumenda aspernatur
+        unde molestiae sapiente aut quam ducimus autem eius magnam. Facere
+        eligendi at quam quasi perferendis dolorum dolore unde, modi, atque
+        labore, doloremque deleniti suscipit maiores. Eius facilis iure
+        cupiditate ea asperiores dolore rerum magnam consequatur quo culpa eaque
+        neque consectetur repellat expedita natus sapiente, dicta quos numquam
+        nisi aliquid! Labore doloribus accusantium officia accusamus minima
+        rerum velit saepe veniam vel ipsum reiciendis dignissimos magni et, quas
+        tempore nam assumenda veritatis ipsa hic odio repudiandae enim! Placeat
+        et, ipsam minus laboriosam accusamus ut dolor delectus fugit quibusdam
+        eius a nesciunt sed quasi odit eos impedit ipsum natus rem! Odio
+        incidunt aliquam laborum? Possimus minus dicta adipisci, magnam, dolore
+        rerum ipsum impedit doloribus quibusdam dolorem ratione nemo et numquam
+        ea quis repudiandae corrupti, neque facilis dignissimos deleniti. Maxime
+        voluptates aspernatur consequatur fuga, eos porro rem quasi ipsa
+        expedita cupiditate enim deserunt. Unde rerum soluta totam architecto
+        eaque laudantium illo quo? Facilis quia voluptate, rerum minus
+        cupiditate, nobis provident voluptatibus voluptates esse repellendus
+        velit neque magnam nisi nesciunt quam ducimus ipsam dolor illum officia
+        beatae, quae expedita. Sequi quos ratione, corrupti suscipit at tempore
+        ipsam ad delectus explicabo hic quam.
+      </p>
+      <app-scroll-py (inView)="getActive($event, 'item4')">
+        <h4 id="list-item-4">Item 4</h4>
+      </app-scroll-py>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus ad
+        inventore, vero non voluptatibus pariatur numquam aliquid consequuntur
+        soluta dolore voluptates eos suscipit nesciunt iusto dolor quidem beatae
+        sequi quo architecto perspiciatis, voluptatum reprehenderit alias fugit
+        fuga! Qui, nisi aliquam ea voluptatem quis fugiat perferendis ipsum
+        magnam perspiciatis distinctio quam debitis? Distinctio animi voluptates
+        soluta accusantium rem doloremque aperiam quas consequatur, harum sunt
+        blanditiis dolore minus nesciunt dolores, fugit nobis eligendi impedit
+        illo necessitatibus repudiandae maxime? Corporis tenetur, eaque dolorem
+        accusantium animi quibusdam rerum soluta perferendis suscipit id ipsa!
+        Quasi, nobis at? Reprehenderit impedit laborum id asperiores,
+        perferendis illo eius saepe? Error tenetur similique laudantium
+        perferendis in hic praesentium repellendus corporis unde tempore nobis,
+        exercitationem neque, reiciendis aliquam, perspiciatis totam odit ab est
+        quod! Atque ducimus incidunt, officiis eius aperiam quod voluptate,
+        sequi recusandae numquam ab, et nihil porro quia magnam. Similique,
+        reprehenderit! Est nihil ex sit? Adipisci neque architecto temporibus
+        nihil maxime rem accusamus earum nam dicta veritatis, maiores quae
+        ratione omnis, eaque tempora saepe sapiente rerum? Assumenda, dolores
+        id? Voluptatibus sapiente hic laborum a, earum soluta, error aut
+        repudiandae accusamus nihil doloremque dignissimos nulla. Sapiente
+        laudantium amet rem ratione et? Dolor sunt quasi possimus, sequi beatae
+        voluptatum qui!
+      </p>
+    </div>
+  </div>
+</div>
